@@ -1,0 +1,23 @@
+{% macro datos(name,placeholder,type='text', class='') %}
+
+<span >
+    <label for="{{name}}">{{name}}</label>
+    <input name="{{name}}" type="{{type}}" placeholder="{{placeholder}}" class="{{class}}" />
+</span>
+
+
+{% endmacro %}
+
+
+{% macro camposNuevos(field) %}
+<td>{{field.label}}</td>
+<dd>{{field(**kwargs) | safe }}</dd>
+{% if field.errors %}
+<ul>
+    {% for error in field.errors %}
+        <li style="color: red; list-style-type: none;">{{error}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endmacro %} 

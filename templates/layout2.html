@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <style>
+        body{
+            padding-top: 60px;
+        }
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+    <!-- <script src="../static/bootstrap/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+    <nav class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="" class="brand">IDGS801</a>
+
+                <ul class="nav">
+                    <li class="active">
+                        <a href="">
+                            <i class="icon-home icon-white"></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="">
+                            <i class="icon-user icon-white"></i>
+                            Usuarios
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="">
+                            <i class="icon-user icon-white"></i>
+                            Alumnos
+                        </a>
+                    </li>
+
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class='container'>
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                
+                    {% for message in messages %}
+                        <div class="alert alert-info">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                
+            {% endif %}
+        {% endwith %}
+
+        {% block content  %} 
+            
+        {% endblock %}
+    </div>
+</body>
+</html>

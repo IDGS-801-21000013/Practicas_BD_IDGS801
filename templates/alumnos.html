@@ -1,0 +1,54 @@
+{% extends "layout2.html" %}
+{% block content %}
+            <!-- <div class="">
+                <h1 >Alumnos</h2>
+                <h2>Escuela: {{escuela}}</h2>
+            </div> -->
+
+            <!-- {% for nombres in nombres %}
+            <div class="">
+                <h2>Nombre: {{nombres}}</h2>
+            </div>
+            {% endfor %} -->
+{% import '_macros.html' as macros %}
+            <h1>Hola desde alumnos</h1>
+
+            <form name="sent" action="" method="POST" novalidate>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.nombre, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.a_paterno, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.a_materno, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.email, class="form-control")}}        
+                    </div>
+                </div>
+                <div class="row control-row">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        {{macros.camposNuevos(form.edad, class="form-control")}}        
+                    </div>
+                </div>
+                <!-- {{macros.datos('Nombre','NOMBRE', class="form-group") }}
+                {{macros.datos('Sueldo', '0.0', 'number', class="form-group") }} -->
+
+                <input type="submit" id="btn1" name="btn1" value="Registrar">
+            </form>
+
+            <h1>Nombre: {{nombre}}</h1>
+            <h1>Apellido Paterno: {{a_paterno}}</h1>
+            <h1>Apellido Materno: {{a_materno}}</h1>
+            <h1>Email: {{email}}</h1>
+            <h1>Edad: {{edad}}</h1>
+
+{% endblock %}
