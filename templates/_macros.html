@@ -10,7 +10,7 @@
 
 
 {% macro camposNuevos(field) %}
-<td>{{field.label}}</td>
+<label>{{field.label}}</label>
 <dd>{{field(**kwargs) | safe }}</dd>
 {% if field.errors %}
 <ul>
